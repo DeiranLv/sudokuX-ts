@@ -8,45 +8,7 @@ Autors: Jevgēnijs Locs
 1. UZDEVUMA FORMULĒJUMS
 ================================================================================
 
-Sudoku X ir klasiskā Sudoku v================================================================================
-SECINĀJUMI
-================================================================================
-
-Projekta ietvaros veiksmīgi implementēts Sudoku X risinātājs, izmantojot 
-Tabu meklēšanas metaheiristiku. 
-
-GALVENIE SASNIEGUMI:
-✓ Pilna Tabu meklēšanas algoritma implementācija bez gatavām bibliotēkām
-✓ Efektīva gājienu stratēģija (rindas mijmaiņas saglabā rindu derīgumu)
-✓ Restartēšanas mehānisms lokālo minimumu pārvarēšanai
-✓ Automatizēta testēšanas infrastruktūra ar CSV/HTML izvadi
-✓ Detalizēta dokumentācija latviešu un angļu valodās
-
-ALGORITMA RAKSTUROJUMS:
-• Stohastiska metaheiristika BEZ garantijas atrast risinājumu
-• Laika un rezultātu variācija ir normāla un sagaidāma īpašība
-• Demonstrē tipiskas metaheiristisku optimizācijas pazīmes:
-  - Ātra konverģence labos gadījumos
-  - Iespējama iestrēgšana lokālos minimumos
-  - Atkarība no sākuma inicializācijas un parametriem
-
-PRAKTISKAIS PIELIETOJUMS:
-Algoritms ir efektīvs vieglu un vidēju Sudoku X uzdevumu risināšanai.
-Grūtiem un tukšiem uzdevumiem ir nepieciešamas vairākas palaišanas reizes
-ar dažādām sēklām, lai palielinātu panākumu iespējamību.
-
-AKADĒMISKĀ VĒRTĪBA:
-Projekts demonstrē:
-✓ Izpratni par kombinatoriālo optimizāciju
-✓ Praktiskas metaheiristiku implementācijas prasmes
-✓ Spēju novērtēt un dokumentēt algoritma ierobežojumus
-✓ Zinātnisku pieeju testēšanai un rezultātu analīzei
-
-Implementācija ir gatava akadēmiskai novērtēšanai un demonstrē pilnīgu
-izpratni par Tabu meklēšanas metodi un tās pielietojumu kombinatoriālajā
-optimizācijā.
-
-================================================================================ ierobežojumiem uz diagonālēm.
+Sudoku X ir klasiskā Sudoku variācija ar papildu ierobežojumiem uz diagonālēm.
 
 IEROBEŽOJUMI:
 1. Katrai rindai jāsatur unikāli cipari 1-9
@@ -495,17 +457,37 @@ SECINĀJUMI
 ================================================================================
 
 Projekta ietvaros veiksmīgi implementēts Sudoku X risinātājs, izmantojot 
-Tabu meklēšanas metaheiristiku. Algoritms demonstrē stabilu veiktspēju un 
-konsekventi atrod derīgus risinājumus dažādas sarežģītības uzdevumiem.
+Tabu meklēšanas metaheiristiku. 
 
-Galvenie sasniegumi:
+GALVENIE SASNIEGUMI:
 ✓ Pilna Tabu meklēšanas algoritma implementācija bez gatavām bibliotēkām
-✓ Efektīva gājienu stratēģija (rindas mijmaiņas)
+✓ Efektīva gājienu stratēģija (rindas mijmaiņas saglabā rindu derīgumu)
 ✓ Restartēšanas mehānisms lokālo minimumu pārvarēšanai
-✓ Automatizēta testēšanas infrastruktūra
-✓ Detalizēta dokumentācija un rezultātu vizualizācija
+✓ Automatizēta testēšanas infrastruktūra ar CSV/HTML izvadi
+✓ Detalizēta dokumentācija latviešu un angļu valodās
 
-Implementācija ir gatava paplašināšanai un demonstrē kombinatoriālās 
-optimizācijas principu praktisko pielietojumu.
+ALGORITMA RAKSTUROJUMS:
+• Stohastiska metaheiristika BEZ garantijas atrast risinājumu
+• Laika un rezultātu variācija ir normāla un sagaidāma īpašība
+• Demonstrē tipiskas metaheiristisku optimizācijas pazīmes:
+  - Ātra konverģence labos gadījumos
+  - Iespējama iestrēgšana lokālos minimumos
+  - Atkarība no sākuma inicializācijas un parametriem
+
+PRAKTISKAIS PIELIETOJUMS:
+Algoritms ir efektīvs vieglu un vidēju Sudoku X uzdevumu risināšanai.
+Grūtiem un tukšiem uzdevumiem ir nepieciešamas vairākas palaišanas reizes
+ar dažādām sēklām, lai palielinātu panākumu iespējamību.
+
+AKADĒMISKĀ VĒRTĪBA:
+Projekts demonstrē:
+✓ Izpratni par kombinatoriālo optimizāciju
+✓ Praktiskas metaheiristiku implementācijas prasmes
+✓ Spēju novērtēt un dokumentēt algoritma ierobežojumus
+✓ Zinātnisku pieeju testēšanai un rezultātu analīzei
+
+Implementācija ir gatava akadēmiskai novērtēšanai un demonstrē pilnīgu
+izpratni par Tabu meklēšanas metodi un tās pielietojumu kombinatoriālajā
+optimizācijā.
 
 ================================================================================
