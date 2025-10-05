@@ -1,0 +1,6 @@
+puzzle,repeat,seed,best_cost,found,iter,time_s,tabu_tenure,neighbour_sample_size
+easy.json,1,1,0,True,17,0.04173280000395607,20,200
+empty.json,1,1,0,True,5069,12.613759800005937,20,200
+hard.json,1,1,1,False,100000,297.54641410001204,20,200
+hard.json,2,2,1,False,100000,318.3915221999923,20,200
+hard.json,3,3,0,True,21745,53.82047419999435,20,200

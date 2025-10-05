@@ -23,9 +23,9 @@ sudokuX-ts/
 │   ├── sudoku.py       # Core utilities and validator
 │   ├── tabuSearch.py   # Main Tabu Search algorithm
 │   └── runTests.py     # CLI for experiments
-├── tests/              # Test puzzles (JSON format)
-├── results/            # Output folder (CSV + HTML)
-└── README.md           # This file
+├── tests/              # Test puzzles #1 (JSON format)
+├── testExapmles/       # Test puzzles #2 (JSON format)
+└── results/            # Output folder (CSV + HTML)
 ```
 
 ## Usage

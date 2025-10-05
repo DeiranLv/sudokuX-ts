@@ -36,12 +36,17 @@ def runSingle(puzzlePath, params):
 def runBatch(folder, outCsv, repeats, params):
     """Run Tabu Search on multiple puzzles with repeats, save results to CSV and HTML."""
     import datetime
+    import random
     now = datetime.datetime.now().strftime('%d-%m-%Y_%H-%M')
     results_dir = Path(f'results/results_{now}')
     results_dir.mkdir(parents=True, exist_ok=True)
     outCsv = results_dir / 'results.csv'
     folder = Path(folder)
     puzzles = sorted([p for p in folder.glob("*.json")])
+    
+    # Determine if we're using random seeds
+    use_random_seed = params.use_random_seed
+    
     with open(outCsv, 'w', newline='') as f:
         writer = csv.writer(f)
         writer.writerow(['puzzle','repeat','seed','best_cost','found','iter','time_s','tabu_tenure','neighbour_sample_size'])
@@ -50,10 +55,19 @@ def runBatch(folder, outCsv, repeats, params):
             for r in range(1, repeats+1):  # Start with rep 1
                 if found_solution:
                     break
-                seed = params.seed + r if params.seed is not None else None
+                
+                # Generate seed for this run
+                if use_random_seed:
+                    seed = random.randint(0, 999999)
+                elif params.seed is not None:
+                    seed = params.seed + r
+                else:
+                    seed = None
                 puzzle_grid = loadPuzzle(str(p))
                 print("\n" + "="*60)
                 print(f"Processing: {p.name} (repeat {r}/{repeats})")
+                if use_random_seed:
+                    print(f"Using random seed: {seed}")
                 print("="*60)
                 best, best_cost, info = tabuSearch(puzzle_grid,
                                                    max_iter=params.max_iter,
@@ -117,12 +131,18 @@ if __name__ == "__main__":
     params = parseArgs()
     
     # Handle random seed
+    params.use_random_seed = False
     if params.seed == -1:
-        import random
-        params.seed = random.randint(0, 999999)
-        print(f"Using random seed: {params.seed}")
+        params.use_random_seed = True
+        params.seed = None  # Will generate new random seed for each run
+        print("Using random seeds for each run")
     
     if params.puzzle:
+        # For single puzzle mode with random seed
+        if params.use_random_seed:
+            import random
+            params.seed = random.randint(0, 999999)
+            print(f"Using random seed: {params.seed}")
         runSingle(params.puzzle, params)
     elif params.batch:
         runBatch(params.batch, params.out, params.repeats, params)
